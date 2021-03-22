@@ -96,7 +96,7 @@ namespace Calculation.Tests.Integration.Test
         [InlineData("at", 20, 10)]
         [InlineData("at", 10, 10)]
         [InlineData("at", 13, 10)]
-        public async Task GetAmmountCalculationFromNettoTest_MustTrue(string country, int vatRate, decimal net)
+        public async Task GetAmmountCalculationFromNettoTest_MustPass(string country, int vatRate, decimal net)
         {
             var response = await _client.GetAsync($"/Calculation/{country}/{vatRate}/net/{net}");
             var responseStatus = response.StatusCode;
@@ -116,7 +116,7 @@ namespace Calculation.Tests.Integration.Test
         [InlineData("at", 20, 10)]
         [InlineData("at", 10, 10)]
         [InlineData("at", 13, 10)]
-        public async Task GetAmmountCalculationFromGrossTest_MustTrue(string country, int vatRate, decimal gross)
+        public async Task GetAmmountCalculationFromGrossTest_MustPass(string country, int vatRate, decimal gross)
         {
             var response = await _client.GetAsync($"/Calculation/{country}/{vatRate}/gross/{gross}");
             var responseStatus = response.StatusCode;
@@ -136,7 +136,7 @@ namespace Calculation.Tests.Integration.Test
         [InlineData("at", 20, 10)]
         [InlineData("at", 10, 10)]
         [InlineData("at", 13, 10)]
-        public async Task GetAmmountCalculationFromVatTest_MustTrue(string country, int vatRate, decimal vat)
+        public async Task GetAmmountCalculationFromVatTest_MustPass(string country, int vatRate, decimal vat)
         {
             var response = await _client.GetAsync($"/Calculation/{country}/{vatRate}/vat/{vat}");
             var responseStatus = response.StatusCode;
